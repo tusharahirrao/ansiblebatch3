@@ -1,0 +1,14 @@
+- hosts: linux
+  become: yes
+  tasks:
+  - name: create multipole directory
+    file:
+      path: "{{ item }}"
+      state: directory
+      mode: 0755
+      owner: ansible
+      group: root
+    with_items:
+    - /home/ansible/folder1
+    - /home/ansible/folder2
+    - /home/ansible/folder3
