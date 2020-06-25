@@ -6,7 +6,7 @@
     apt: name=apache2 update_cache=yes state=latest
     when: ansible_os_family == "Debian"
   - name: start apache on ubuntu
-    service: name=apache2 enabled=yes state=stopped
+    service: name=apache2 enabled=yes state=started
     when: ansible_os_family == "Debian"
   - name: install apache on centos
     yum: name=httpd update_cache=yes state=latest
